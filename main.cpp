@@ -15,14 +15,19 @@ int main()
      while(!window.closed())
     {
         window.clear();
-//        glBegin(GL_QUADS);
-//        glVertex2f(-0.5f, -0.5f);
-//        glVertex2f(-0.5f, 0.5f);
-//        glVertex2f(0.5f, 0.5f);
-//        glVertex2f(0.5f, -0.5f);
-//        glEnd();
 
-        glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
+        double x, y;
+        window.getMousePosition(x, y);
+        std::cout << x << ", " << y << std::endl;
+
+        glBegin(GL_QUADS);
+        glVertex2f(-0.5f, -0.5f);
+        glVertex2f(-0.5f, 0.5f);
+        glVertex2f(0.5f, 0.5f);
+        glVertex2f(0.5f, -0.5f);
+        glEnd();
+
+//        glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
         window.update();
     }
 
