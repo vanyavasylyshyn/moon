@@ -7,5 +7,7 @@ add_executable(moon main.cpp
         src/graphics/window.h
         src/graphics/window.cpp)
 
+find_package(GLEW REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(moon PRIVATE glfw "-framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
+
+target_link_libraries(moon PRIVATE glfw GLEW::glew "-framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
