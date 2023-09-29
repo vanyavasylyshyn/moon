@@ -17,6 +17,9 @@ int main()
     vec4 a(1.0f, 2.0f, 5.0f, 1.0f);
     vec4 b(2.0f, 4.0f, 6.0f, 1.0f);
 
+    mat4 position = mat4::translation(vec3(2, 3, 4));
+    position *= mat4::identity();
+
      while(!window.closed())
     {
         window.clear();
